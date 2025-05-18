@@ -1,0 +1,4 @@
+baseURL = "ba-amir.codeberg.page"
+languageCode = "en-us"
+title = "Language Oriented"
+theme = 'terminal'
