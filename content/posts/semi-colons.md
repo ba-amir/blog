@@ -95,24 +95,29 @@ when we broaden our scope a bit.
 
 ## Expression-based languages
 
-Not all languages are imperative. In my opinion, few of the ones are. Some languages, rather than issuing 
-commands to the computer they describe the solution. Most of the terms in these programming languages are 
-expressions rather than statements, that is, they return a value instead of doing something or other. I refer 
-to these languages as **expression-based**, in these languages semicolons aren't always used to separate 
-statements usually because they're a lot less statements going around. This section will be a brief survey 
-on how semicolons are used in three of them: OCaml, LISP and Rust. 
+Not all languages are imperative.  Some languages, rather than issuing 
+commands to the computer, describe what the solution should be. As a result, 
+these programs in these languages often have very few statements and are mostly 
+made of expressions. Expressions always evaluate to a single value, these values 
+can then be combined using familiar operators and functions. So semicolons don't find 
+as much use in terminating statements so they're used in some interesting ways.
+
+This section will be a brief survey 
+of these languages: OCaml, LISP and Rust. 
 
 
 ### OCaml
 In Ocaml, semicolons are more of a general purpose separator. They're used for separating list items, record 
 fields and- surprise, surprise- statements. Statements in Ocaml are expressions that return `unit` 
-(similar to void in C-like languages), using semicolons you can chain multiple statements together. 
+(similar to void in C-like languages), using semicolons you can chain multiple statements together like you would 
+in an imperative language. 
 
 ```ocaml 
 (** This is a comment*)
 
 let fruits = ["banana"; "apple"; "orange"] (** This is a list*)
 
+(**This is a record *)
 type Person = {
     name: string; 
     age: int;
@@ -125,11 +130,21 @@ let main =
 ```
 
 ### LISP 
-For LISP and its descendants everything is a list and the lists only ever need 
-to be separated by whitespace. Even when statements are used, it's pretty easy to just 
-list them out. 
 
-```LISP
+For LISP and its descendants **everything is a list** including programs. A function call in 
+LISP is simply a list where the first item (known as car or head) is the function and the remaining
+elements (cdr or rest) are the function's arguments. LISP's syntax is incredibly minimalistic and 
+the whitespace is used to separate list items. LISP is lacking most the usual cases where semicolons
+are used in other languages so you might be wondering where they could possibly be used? I give you three 
+guesses. 
+
+Comments. 
+
+LISP and a few of its descendants use semicolons to indicate comments.
+
+```scheme
+;; This is a statement.
+;; do chains multiple statements together
 (do 
     statement1 
     statement2 
@@ -139,7 +154,11 @@ list them out.
 
 ### Rust
 Rust is a bit of a special case in that it's more imperative than expression-based languages but 
-not as imperative as imperative languages. Semicolons are used to "promote" expressions into statements. 
+not as imperative as imperative languages. In Rust, Semicolons are used to "promote" expressions into statements. 
+This is especially important to take note of because Rust functions return the 
+value of the last expression in a function, so a stray semicolon could be the difference between your function 
+returning what it's supposed to and returning nothing. Luckily, this is hardly an issue in Rust because of its 
+strong type-checking but it can easily trip-up beginners. 
 
 
 ```rust 
@@ -155,3 +174,6 @@ fn func2() {
 }
 ```
 
+## Conclusion
+And that's pretty much everything I know about semicolon use in programming languages. If you notice any glaring errors 
+or oversight on my part please don't hesitate to reach out. 
