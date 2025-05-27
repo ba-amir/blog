@@ -70,7 +70,7 @@ my @num = 1,2,3,4,5;
 my $num 
 
 ```
-I also find it interesting to note that Sigil's were somewhat inspired by the use of plural suffixes in natural languages. 
+I also find it rather interesting that Sigil's were somewhat inspired by the use of plural suffixes in natural languages. 
 
 Another really cool thing about suffixes is that they aid variable interpolation, take a gander at the example below. 
 

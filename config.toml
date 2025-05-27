@@ -3,6 +3,3 @@ languageCode = "en-us"
 title = "Language Oriented"
 theme = "terminal"
 description = "About literally anything that interests me really. So mostly programming language stuff"
-
-[params]
-author = 'ba-amir'
